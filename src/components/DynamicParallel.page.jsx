@@ -12,10 +12,13 @@ export const DynamicParalledQueriesPage = ({ ids }) => {
 			return {
 				queryKey: ["super-hero", id],
 				queryFn: () => fetchSuperHeroes(id),
+				staleTime: twentyFourHoursInMs,
+				// refetchInterval: Infinity,
+				// refetchInBackground: false,
 			};
 		}),
 	});
-	console.log(queryResults);
+	// console.log(queryResults);
 	return (
 		<div>
 			Dynamic Parallel Queries Page
